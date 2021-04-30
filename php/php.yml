@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: php
+  name: php
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: php
+    spec:
+#      imagePullSecrets:
+#      - name: regcred
+      containers:
+      - image: singjc/php-c
+        name: php-c
+        resources: {}
+status: {}
